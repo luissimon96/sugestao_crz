@@ -1,9 +1,10 @@
 {
-  "name": "sugestao_crz",
+  "name": "sugestaocrz/suggestion-system",
   "description": "A PHP project for suggestion system.",
   "type": "project",
   "require": {
-    "php": "^7.4 || ^8.0"
+    "php": "^7.4 || ^8.0",
+    "ext-dom": "*"
   },
   "autoload": {
     "psr-4": {
@@ -14,8 +15,19 @@
     "phpunit/phpunit": "^9.5"
   },
   "scripts": {
-    "test": "phpunit"
+    "test": "phpunit",
+    "test-coverage": "phpunit --coverage-html=coverage",
+    "test-coverage-text": "phpunit --coverage-text",
+    "test-coverage-clover": "phpunit --coverage-clover=coverage.xml"
   },
   "minimum-stability": "stable",
-  "prefer-stable": true
+  "prefer-stable": true,
+  "config": {
+    "platform": {
+      "php": "7.4.0"
+    },
+    "optimize-autoloader": true,
+    "sort-packages": true,
+    "platform-check": false
+  }
 }
